@@ -1,18 +1,41 @@
-
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="200px" height="200px" viewBox="0 0 200 200">
-<defs>
-<g id="Layer0_0_FILL">
-<path fill="#000000" stroke="none" d="
-M 200 53.95
-L 200 21 -0.6 21 -0.6 53.95 200 53.95
-M 200 115.6
-L 200 82.65 -0.6 82.65 -0.6 115.6 200 115.6
-M 200 179
-L 200 146.05 -0.6 146.05 -0.6 179 200 179 Z"/>
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="459px" height="459px" viewBox="0 0 459 459" style="enable-background:new 0 0 459 459;" xml:space="preserve">
+<g>
+	<g id="menu">
+		<path d="M0,382.5h459v-51H0V382.5z M0,255h459v-51H0V255z M0,76.5v51h459v-51H0z"/>
+	</g>
 </g>
-</defs>
-
-<g transform="matrix( 1, 0, 0, 0.886077880859375, 0,11.4) ">
-<use xlink:href="#Layer0_0_FILL"/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
 </g>
 </svg>

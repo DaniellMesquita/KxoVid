@@ -9,28 +9,28 @@
 
   Promise = (function() {
     Promise.join = function() {
-      var args, fn1, k, len, num_uncompleted, promise, task, task_id, tasks;
+      var args, fn1, l, len, num_uncompleted, promise, task, task_id, tasks;
       tasks = 1 <= arguments.length ? slice.call(arguments, 0) : [];
       num_uncompleted = tasks.length;
       args = new Array(num_uncompleted);
       promise = new Promise();
       fn1 = function(task_id) {
         return task.then(function() {
-          var callback, l, len1, ref2, results;
+          var callback, len1, m, ref2, results;
           args[task_id] = Array.prototype.slice.call(arguments);
           num_uncompleted--;
           if (num_uncompleted === 0) {
             ref2 = promise.callbacks;
             results = [];
-            for (l = 0, len1 = ref2.length; l < len1; l++) {
-              callback = ref2[l];
+            for (m = 0, len1 = ref2.length; m < len1; m++) {
+              callback = ref2[m];
               results.push(callback.apply(promise, args));
             }
             return results;
           }
         });
       };
-      for (task_id = k = 0, len = tasks.length; k < len; task_id = ++k) {
+      for (task_id = l = 0, len = tasks.length; l < len; task_id = ++l) {
         task = tasks[task_id];
         fn1(task_id);
       }
@@ -45,7 +45,7 @@
     }
 
     Promise.prototype.resolve = function() {
-      var back, callback, k, len, ref2;
+      var back, callback, l, len, ref2;
       if (this.resolved) {
         return false;
       }
@@ -56,8 +56,8 @@
       }
       this.result = this.data[0];
       ref2 = this.callbacks;
-      for (k = 0, len = ref2.length; k < len; k++) {
-        callback = ref2[k];
+      for (l = 0, len = ref2.length; l < len; l++) {
+        callback = ref2[l];
         back = callback.apply(callback, this.data);
       }
       if (this.end_promise && back && back.then) {
@@ -149,7 +149,7 @@
     }
 
     Text.prototype.toColor = function(text, saturation, lightness) {
-      var hash, i, k, ref2;
+      var hash, i, l, ref2;
       if (saturation == null) {
         saturation = 30;
       }
@@ -157,7 +157,7 @@
         lightness = 50;
       }
       hash = 0;
-      for (i = k = 0, ref2 = text.length - 1; 0 <= ref2 ? k <= ref2 : k >= ref2; i = 0 <= ref2 ? ++k : --k) {
+      for (i = l = 0, ref2 = text.length - 1; 0 <= ref2 ? l <= ref2 : l >= ref2; i = 0 <= ref2 ? ++l : --l) {
         hash += text.charCodeAt(i) * i;
         hash = hash % 1777;
       }
@@ -270,15 +270,15 @@
     };
 
     Text.prototype.distance = function(s1, s2) {
-      var char, extra_parts, k, key, len, match, next_find, next_find_i, val;
+      var char, extra_parts, key, l, len, match, next_find, next_find_i, val;
       s1 = s1.toLocaleLowerCase();
       s2 = s2.toLocaleLowerCase();
       next_find_i = 0;
       next_find = s2[0];
       match = true;
       extra_parts = {};
-      for (k = 0, len = s1.length; k < len; k++) {
-        char = s1[k];
+      for (l = 0, len = s1.length; l < len; l++) {
+        char = s1[l];
         if (char !== next_find) {
           if (extra_parts[next_find_i]) {
             extra_parts[next_find_i] += char;
@@ -310,11 +310,11 @@
     };
 
     Text.prototype.queryParse = function(query) {
-      var k, key, len, params, part, parts, ref2, val;
+      var key, l, len, params, part, parts, ref2, val;
       params = {};
       parts = query.split('&');
-      for (k = 0, len = parts.length; k < len; k++) {
-        part = parts[k];
+      for (l = 0, len = parts.length; l < len; l++) {
+        part = parts[l];
         ref2 = part.split("="), key = ref2[0], val = ref2[1];
         if (val) {
           params[decodeURIComponent(key)] = decodeURIComponent(val);
@@ -343,10 +343,10 @@
     };
 
     Text.prototype.highlight = function(text, search) {
-      var back, i, k, len, part, parts;
+      var back, i, l, len, part, parts;
       parts = text.split(RegExp(search, "i"));
       back = [];
-      for (i = k = 0, len = parts.length; k < len; i = ++k) {
+      for (i = l = 0, len = parts.length; l < len; i = ++l) {
         part = parts[i];
         back.push(part);
         if (i < parts.length - 1) {
@@ -361,10 +361,10 @@
     Text.prototype.sqlIn = function(values) {
       var value;
       return "(" + ((function() {
-        var k, len, results;
+        var l, len, results;
         results = [];
-        for (k = 0, len = values.length; k < len; k++) {
-          value = values[k];
+        for (l = 0, len = values.length; l < len; l++) {
+          value = values[l];
           results.push("'" + value + "'");
         }
         return results;
@@ -539,9 +539,9 @@
     };
 
     ZeroFrame.prototype.processQueue = function() {
-      var cb, cmd, i, k, len, params, ref, ref1;
+      var cb, cmd, i, l, len, params, ref, ref1;
       ref = this.queue;
-      for (i = k = 0, len = ref.length; k < len; i = ++k) {
+      for (i = l = 0, len = ref.length; l < len; i = ++l) {
         ref1 = ref[i];
         cmd = ref1[0];
         params = ref1[1];
@@ -903,7 +903,7 @@
     }
 
     left_menuify.prototype.render = function() {
-      var item_head_version, item_home, item_home_link, item_latest, item_latest_link, item_seedbox, item_seedbox_link, item_source, item_source_link, item_videobox, item_videobox_link, menu_left, menu_left_items;
+      var item_head_version, item_home, item_home_link, item_latest, item_latest_link, item_seedbox, item_seedbox_link, item_source, item_source_link, item_subbed, item_subbed_link, item_videobox, item_videobox_link, menu_left, menu_left_items;
       menu_left = $("<div></div>");
       menu_left.attr("id", "menu_left");
       menu_left.attr("class", "menu_left");
@@ -913,7 +913,7 @@
       item_head_version = $("<li></li>");
       item_head_version.attr("id", "item_head_version");
       item_head_version.attr("class", "list_item li_head");
-      item_head_version.text("BETA v0.2.07");
+      item_head_version.text("BETA v0.2.11");
       item_home = $("<li></li>");
       item_home.attr("id", "item_home");
       item_home.attr("class", "list_item li_home");
@@ -930,6 +930,14 @@
       item_latest_link.attr("class", "item_link");
       item_latest_link.attr("href", "?Latest");
       item_latest_link.text("Airing Now");
+      item_subbed = $("<li></li>");
+      item_subbed.attr("id", "item_subbed");
+      item_subbed.attr("class", "list_item li_subbed");
+      item_subbed_link = $("<a></a>");
+      item_subbed_link.attr("id", "item_subbed_link");
+      item_subbed_link.attr("class", "item_link");
+      item_subbed_link.attr("href", "?Subbed");
+      item_subbed_link.text("Subscribed");
       item_videobox = $("<li></li>");
       item_videobox.attr("id", "item_videobox");
       item_videobox.attr("class", "list_item li_videobox");
@@ -952,7 +960,7 @@
       item_source_link = $("<a></a>");
       item_source_link.attr("id", "item_source_link");
       item_source_link.attr("class", "item_link");
-      item_source_link.attr("href", "http://127.0.0.1:43110/1GitLiXB6t5r8vuU2zC6a8GYj9ME6HMQ4t/repo/?1FgSciF793iXrbFdGyK2GG1QPfD98DWMnu");
+      item_source_link.attr("href", "http://127.0.0.1:43110/12NptcFqnsxiydK4W8VLK6EwjpbZS3bTHS");
       item_source_link.text("Source Code");
       $("#nav").html("");
       $("#nav").append(menu_left);
@@ -962,6 +970,8 @@
       $("#item_home").append(item_home_link);
       $("#menu_left_items").append(item_latest);
       $("#item_latest").append(item_latest_link);
+      $("#menu_left_items").append(item_subbed);
+      $("#item_subbed").append(item_subbed_link);
       $("#menu_left_items").append(item_videobox);
       $("#item_videobox").append(item_videobox_link);
       $("#menu_left_items").append(item_seedbox);
@@ -977,7 +987,10 @@
       $("#item_videobox_link").on("click", function() {
         return Page.nav(this.href);
       });
-      return $("#item_seedbox_link").on("click", function() {
+      $("#item_seedbox_link").on("click", function() {
+        return Page.nav(this.href);
+      });
+      return $("#item_subbed_link").on("click", function() {
         return Page.nav(this.href);
       });
     };
@@ -1149,16 +1162,16 @@
     };
 
     seedbox.prototype.delete_optional_files = function(form) {
-      var bigfile_row, bigfiles, i, k, l, len, len1, value_row, values;
+      var bigfile_row, bigfiles, i, l, len, len1, m, value_row, values;
       values = [];
       bigfiles = form.bigfile;
-      for (i = k = 0, len = bigfiles.length; k < len; i = ++k) {
+      for (i = l = 0, len = bigfiles.length; l < len; i = ++l) {
         bigfile_row = bigfiles[i];
         if (bigfile_row.checked) {
           values.push(bigfile_row.value);
         }
       }
-      for (i = l = 0, len1 = values.length; l < len1; i = ++l) {
+      for (i = m = 0, len1 = values.length; m < len1; i = ++m) {
         value_row = values[i];
         Page.cmd("optionalFileDelete", value_row);
         Page.cmd("optionalFileDelete", value_row + ".piecemap.msgpack");
@@ -1179,16 +1192,16 @@
             filter: "downloaded,bigfile",
             limit: 1000
           }, function(res2) {
-            var checkbox_label, checkbox_label_id, checkmark_span, file_name, file_peer, file_seed, file_seed_no_null, file_size, i, j, k, len, megabytes, optional_path, results, row1, row2, text_display, video_brief, video_checkbox, video_checkbox_id, video_date_added, video_image, video_link, video_link_id, video_name, video_row, video_row_id, video_size, video_string, video_title, video_user_address;
+            var checkbox_label, checkbox_label_id, checkmark_span, file_name, file_peer, file_seed, file_seed_no_null, file_size, i, j, l, len, megabytes, optional_path, results, row1, row2, text_display, video_brief, video_checkbox, video_checkbox_id, video_date_added, video_image, video_link, video_link_id, video_name, video_row, video_row_id, video_size, video_string, video_title, video_user_address;
             $("#seedbox_actual_list").html("");
             $("#more_videos").html("<div class='more_videos text'>More videos!</div>");
             results = [];
-            for (i = k = 0, len = res1.length; k < len; i = ++k) {
+            for (i = l = 0, len = res1.length; l < len; i = ++l) {
               row1 = res1[i];
               results.push((function() {
-                var l, len1, results1;
+                var len1, m, results1;
                 results1 = [];
-                for (j = l = 0, len1 = res2.length; l < len1; j = ++l) {
+                for (j = m = 0, len1 = res2.length; m < len1; j = ++m) {
                   row2 = res2[j];
                   optional_path = row2['inner_path'];
                   file_name = row2['inner_path'].replace(/.*\//, "");
@@ -1631,16 +1644,16 @@
             filter: "",
             limit: 1000
           }, function(res2) {
-            var delete_video, file_name, file_peer, file_seed, file_seed_no_null, i, j, k, len, optional_path, results, row1, row2, video_brief, video_date_added, video_delete_link, video_delete_link_id, video_edit_link, video_edit_link_id, video_image, video_link, video_link_id, video_name, video_row, video_row_id, video_string, video_title, video_user_address;
+            var delete_video, file_name, file_peer, file_seed, file_seed_no_null, i, j, l, len, optional_path, results, row1, row2, video_brief, video_date_added, video_delete_link, video_delete_link_id, video_edit_link, video_edit_link_id, video_image, video_link, video_link_id, video_name, video_row, video_row_id, video_string, video_title, video_user_address;
             $("#videobox").html("");
             $("#more_videos").html("<div class='more_videos text'>More videos!</div>");
             results = [];
-            for (i = k = 0, len = res1.length; k < len; i = ++k) {
+            for (i = l = 0, len = res1.length; l < len; i = ++l) {
               row1 = res1[i];
               results.push((function() {
-                var l, len1, results1;
+                var len1, m, results1;
                 results1 = [];
-                for (j = l = 0, len1 = res2.length; l < len1; j = ++l) {
+                for (j = m = 0, len1 = res2.length; m < len1; j = ++m) {
                   row2 = res2[j];
                   optional_path = row2['inner_path'];
                   file_name = row2['inner_path'].replace(/.*\//, "");
@@ -1743,6 +1756,7 @@
     function video_lister() {
       this.render = bind(this.render, this);
       this.update = bind(this.update, this);
+      this.query_database = bind(this.query_database, this);
       this.print_row = bind(this.print_row, this);
       this.seed_click = bind(this.seed_click, this);
       this.link_click = bind(this.link_click, this);
@@ -1919,9 +1933,71 @@
       return this.counter = this.counter + 1;
     };
 
+    video_lister.prototype.query_database = function(query, file_limit, order_actual) {
+      var query_full;
+      query_full = "SELECT * FROM file LEFT JOIN json USING (json_id) " + query + " ORDER BY date_added DESC" + file_limit;
+      console.log(query_full);
+      return Page.cmd("dbQuery", [query_full], (function(_this) {
+        return function(res1) {
+          return Page.cmd("optionalFileList", order_actual, function(res2) {
+            var base1, base2, base3, i, j, k, l, len, len1, len2, m, n, optional_name, optional_piecemap, results, row1, row2, row3, stats;
+            $("#video_list").html("");
+            $("#more_videos").html("<div class='more_videos text'>More videos!</div>");
+            stats = {};
+            for (i = l = 0, len = res2.length; l < len; i = ++l) {
+              row2 = res2[i];
+              stats[row2.inner_path] = row2;
+            }
+            for (j = m = 0, len1 = res1.length; m < len1; j = ++m) {
+              row1 = res1[j];
+              optional_piecemap = optional_name + ".piecemap.msgpack";
+              optional_name = row2.inner_path.replace(/.*\//, "");
+              row1.inner_path = "data/users/" + row1.directory + "/" + row1.file_name;
+              row1.stats = stats[row1.inner_path];
+              if (row1.stats == null) {
+                row1.stats = {};
+              }
+              if (row1.stats == null) {
+                row1.stats = {};
+              }
+              if ((base1 = row1.stats).peer == null) {
+                base1.peer = 0;
+              }
+              if ((base2 = row1.stats).peer_seed == null) {
+                base2.peer_seed = 0;
+              }
+              if ((base3 = row1.stats).peer_leech == null) {
+                base3.peer_leech = 0;
+              }
+            }
+            if (i === res2.length && j === res1.length) {
+              if (_this.order_by === "peer") {
+                res1.sort(function(a, b) {
+                  return Math.min(5, b.stats["peer_seed"]) + b.stats["peer"] - a.stats["peer"] - Math.min(5, a.stats["peer_seed"]);
+                });
+              }
+              results = [];
+              for (k = n = 0, len2 = res1.length; n < len2; k = ++n) {
+                row3 = res1[k];
+                if (_this.counter < _this.max_videos) {
+                  results.push(_this.print_row(row3));
+                } else {
+                  results.push(void 0);
+                }
+              }
+              return results;
+            }
+          });
+        };
+      })(this));
+    };
+
     video_lister.prototype.update = function() {
-      var channel_name, file_limit, init_url, order_actual, query, query_string_no_space;
+      var channel_name, file_limit, init_url, max_videos, order_actual, query, query_database, query_string_no_space, query_timeout;
       console.log("[KopyKate: Updating video list]");
+      query = "";
+      query_database = this.query_database;
+      max_videos = this.max_videos;
       if (this.order_by === "peer") {
         order_actual = {
           orderby: "peer DESC",
@@ -1932,6 +2008,7 @@
         query_string_no_space = this.query_string.replace(/\s/g, "%");
         query = "WHERE file.title LIKE '%" + query_string_no_space + "%'";
         file_limit = "";
+        return query_database(query, file_limit, order_actual);
       } else if (this.order_by === "channel") {
         init_url = Page.history_state["url"];
         channel_name = init_url.split("Channel=")[1];
@@ -1942,7 +2019,41 @@
         };
         query_string_no_space = this.query_string.replace(/\s/g, "%");
         query = "WHERE cert_user_id='" + channel_name + "' AND file.title LIKE '%" + query_string_no_space + "%'";
-        file_limit = " LIMIT " + this.max_videos + "";
+        file_limit = " LIMIT " + max_videos + "";
+        return query_database(query, file_limit, order_actual);
+      } else if (this.order_by === "subbed") {
+        query_string_no_space = this.query_string.replace(/\s/g, "%");
+        return query_timeout = setTimeout(function() {
+          if (Page.site_info) {
+            if (Page.site_info.auth_address) {
+              clearTimeout(query_timeout);
+              return Page.cmd("dbQuery", ["SELECT * FROM subscription LEFT JOIN json USING (json_id) WHERE directory='" + Page.site_info.auth_address + "'"], (function(_this) {
+                return function(res0) {
+                  var i, l, len, row0;
+                  query = "WHERE ";
+                  i = 0;
+                  for (i = l = 0, len = res0.length; l < len; i = ++l) {
+                    row0 = res0[i];
+                    if (i < 1) {
+                      query += "directory='" + row0.user_address + "'";
+                    } else {
+                      query += " OR directory='" + row0.user_address + "'";
+                    }
+                  }
+                  if (i === res0.length) {
+                    order_actual = {
+                      filter: "",
+                      address: "18Pfr2oswXvD352BbJvo59gZ3GbdbipSzh",
+                      limit: 1000
+                    };
+                    file_limit = " LIMIT " + max_videos + "";
+                    return query_database(query, file_limit, order_actual);
+                  }
+                };
+              })(this));
+            }
+          }
+        }, 1000);
       } else {
         order_actual = {
           filter: "",
@@ -1951,109 +2062,9 @@
         };
         query_string_no_space = this.query_string.replace(/\s/g, "%");
         query = "WHERE file.title LIKE '%" + query_string_no_space + "%'";
-        file_limit = " LIMIT " + this.max_videos + "";
+        file_limit = " LIMIT " + max_videos + "";
+        return query_database(query, file_limit, order_actual);
       }
-      return Page.cmd("dbQuery", ["SELECT * FROM file LEFT JOIN json USING (json_id) " + query + " ORDER BY date_added DESC" + file_limit], (function(_this) {
-        return function(res1) {
-          return Page.cmd("optionalFileList", order_actual, function(res2) {
-            var base1, base2, base3, base4, base5, i, j, k, l, len, len1, len2, m, optional_name, optional_piecemap, results, results1, row1, row2, stats, video_loaded;
-            $("#video_list").html("");
-            $("#more_videos").html("<div class='more_videos text'>More videos!</div>");
-            stats = {};
-            console.log("ORDER MODE: " + _this.order_by);
-            if (_this.order_by === "peer") {
-              results = [];
-              for (i = k = 0, len = res2.length; k < len; i = ++k) {
-                row2 = res2[i];
-                results.push((function() {
-                  var base1, base2, base3, l, len1, results1;
-                  results1 = [];
-                  for (j = l = 0, len1 = res1.length; l < len1; j = ++l) {
-                    row1 = res1[j];
-                    stats[row2.inner_path] = row2;
-                    optional_piecemap = optional_name + ".piecemap.msgpack";
-                    optional_name = row2.inner_path.replace(/.*\//, "");
-                    row1.inner_path = "data/users/" + row1.directory + "/" + row1.file_name;
-                    row1.stats = stats[row1.inner_path];
-                    if (row1.stats == null) {
-                      row1.stats = {};
-                    }
-                    if (row1.stats == null) {
-                      row1.stats = {};
-                    }
-                    if ((base1 = row1.stats).peer == null) {
-                      base1.peer = 0;
-                    }
-                    if ((base2 = row1.stats).peer_seed == null) {
-                      base2.peer_seed = 0;
-                    }
-                    if ((base3 = row1.stats).peer_leech == null) {
-                      base3.peer_leech = 0;
-                    }
-                    if (optional_name === row1.file_name && this.counter < this.max_videos) {
-                      results1.push(this.print_row(row1));
-                    } else {
-                      results1.push(void 0);
-                    }
-                  }
-                  return results1;
-                }).call(_this));
-              }
-              return results;
-            } else {
-              results1 = [];
-              for (i = l = 0, len1 = res1.length; l < len1; i = ++l) {
-                row1 = res1[i];
-                video_loaded = false;
-                j = 0;
-                for (j = m = 0, len2 = res2.length; m < len2; j = ++m) {
-                  row2 = res2[j];
-                  stats[row2.inner_path] = row2;
-                  optional_name = row2.inner_path.replace(/.*\//, "");
-                  optional_piecemap = optional_name + ".piecemap.msgpack";
-                  row1.inner_path = "data/users/" + row1.directory + "/" + row1.file_name;
-                  row1.stats = stats[row1.inner_path];
-                  if (row1.stats == null) {
-                    row1.stats = {};
-                  }
-                  if (row1.stats == null) {
-                    row1.stats = {};
-                  }
-                  if ((base1 = row1.stats).peer == null) {
-                    base1.peer = 0;
-                  }
-                  if ((base2 = row1.stats).peer_seed == null) {
-                    base2.peer_seed = 0;
-                  }
-                  if ((base3 = row1.stats).peer_leech == null) {
-                    base3.peer_leech = 0;
-                  }
-                  if ((base4 = row1.stats).bytes_downloaded == null) {
-                    base4.bytes_downloaded = 0;
-                  }
-                  if ((base5 = row1.stats).is_downloading == null) {
-                    base5.is_downloading = false;
-                  }
-                  if (row1.file_name === optional_name && _this.counter < _this.max_videos) {
-                    video_loaded = true;
-                    _this.print_row(row1);
-                  }
-                }
-                if (j === res2.length) {
-                  if (_this.counter < _this.max_videos && video_loaded === false) {
-                    results1.push(_this.print_row(row1));
-                  } else {
-                    results1.push(void 0);
-                  }
-                } else {
-                  results1.push(void 0);
-                }
-              }
-              return results1;
-            }
-          });
-        };
-      })(this));
     };
 
     video_lister.prototype.render = function() {
@@ -2097,10 +2108,25 @@
       this.render_player = bind(this.render_player, this);
       this.render_video = bind(this.render_video, this);
       this.load_comments = bind(this.load_comments, this);
+      this.load_likes = bind(this.load_likes, this);
+      this.load_report = bind(this.load_report, this);
+      this.load_subs = bind(this.load_subs, this);
       this.load_related = bind(this.load_related, this);
       this.write_comment = bind(this.write_comment, this);
+      this.add_report = bind(this.add_report, this);
+      this.add_vote = bind(this.add_vote, this);
+      this.subscribe = bind(this.subscribe, this);
+      this.register_report = bind(this.register_report, this);
+      this.register_vote = bind(this.register_vote, this);
       this.register_comment = bind(this.register_comment, this);
+      this.register_subscription = bind(this.register_subscription, this);
       this.delete_comment = bind(this.delete_comment, this);
+      this.delete_subscription = bind(this.delete_subscription, this);
+      this.delete_like = bind(this.delete_like, this);
+      this.delete_report = bind(this.delete_report, this);
+      this.delete_sub_from_data_json = bind(this.delete_sub_from_data_json, this);
+      this.delete_like_from_data_json = bind(this.delete_like_from_data_json, this);
+      this.delete_report_from_data_json = bind(this.delete_report_from_data_json, this);
       this.delete_from_data_json = bind(this.delete_from_data_json, this);
       this.video_started = 0;
       this.player_timeout;
@@ -2112,13 +2138,13 @@
       console.log("deleting comment from data.json at directory: " + Page.site_info.auth_address);
       return Page.cmd("fileGet", data_inner_path, (function(_this) {
         return function(res) {
-          var comment_count, data, i, k, len, ref2;
+          var comment_count, data, i, l, len, ref2;
           data = JSON.parse(res);
           console.log(data["comment"][file_uri]);
           comment_count = 0;
           ref2 = data["comment"][file_uri];
-          for (k = 0, len = ref2.length; k < len; k++) {
-            i = ref2[k];
+          for (l = 0, len = ref2.length; l < len; l++) {
+            i = ref2[l];
             console.log("Comment row: " + data["comment"][file_uri][comment_count]);
             if (com_date_added.toString().indexOf(data["comment"][file_uri][comment_count]["date_added"]) !== -1) {
               data["comment"][file_uri].splice(comment_count, 1);
@@ -2128,6 +2154,113 @@
           }
           return Page.cmd("fileWrite", [data_inner_path, Text.fileEncode(data)], function(res) {
             return typeof cb === "function" ? cb(res) : void 0;
+          });
+        };
+      })(this));
+    };
+
+    video_playing.prototype.delete_report_from_data_json = function(file_uri, cb) {
+      var data_inner_path;
+      data_inner_path = "data/users/" + Page.site_info.auth_address + "/data.json";
+      return Page.cmd("fileGet", data_inner_path, (function(_this) {
+        return function(res) {
+          var data;
+          data = JSON.parse(res);
+          delete data["file_report"][file_uri];
+          return Page.cmd("fileWrite", [data_inner_path, Text.fileEncode(data)], function(res) {
+            return typeof cb === "function" ? cb(res) : void 0;
+          });
+        };
+      })(this));
+    };
+
+    video_playing.prototype.delete_like_from_data_json = function(file_uri, cb) {
+      var data_inner_path;
+      data_inner_path = "data/users/" + Page.site_info.auth_address + "/data.json";
+      return Page.cmd("fileGet", data_inner_path, (function(_this) {
+        return function(res) {
+          var data;
+          data = JSON.parse(res);
+          delete data["file_vote"][file_uri];
+          return Page.cmd("fileWrite", [data_inner_path, Text.fileEncode(data)], function(res) {
+            return typeof cb === "function" ? cb(res) : void 0;
+          });
+        };
+      })(this));
+    };
+
+    video_playing.prototype.delete_sub_from_data_json = function(user_directory, cb) {
+      var data_inner_path;
+      data_inner_path = "data/users/" + Page.site_info.auth_address + "/data.json";
+      return Page.cmd("fileGet", data_inner_path, (function(_this) {
+        return function(res) {
+          var data;
+          data = JSON.parse(res);
+          delete data["subscription"][user_directory];
+          return Page.cmd("fileWrite", [data_inner_path, Text.fileEncode(data)], function(res) {
+            return typeof cb === "function" ? cb(res) : void 0;
+          });
+        };
+      })(this));
+    };
+
+    video_playing.prototype.delete_report = function(date_added, user_address) {
+      var content_inner_path, delete_report_from_data_json, file_uri, this_load_report;
+      file_uri = date_added + "_" + user_address;
+      delete_report_from_data_json = this.delete_report_from_data_json;
+      content_inner_path = "data/users/" + Page.site_info.auth_address + "/content.json";
+      this_load_report = this.load_report;
+      return Page.cmd("wrapperConfirm", ["Unreport?", "Ok"], (function(_this) {
+        return function() {
+          return delete_report_from_data_json(file_uri, function(res) {
+            if (res === "ok") {
+              Page.cmd("sitePublish", {
+                "inner_path": content_inner_path
+              });
+              console.log("[KopyKate: Unreported]");
+              return this_load_report();
+            }
+          });
+        };
+      })(this));
+    };
+
+    video_playing.prototype.delete_like = function(date_added, user_address) {
+      var content_inner_path, delete_like_from_data_json, file_uri, this_load_likes;
+      file_uri = date_added + "_" + user_address;
+      delete_like_from_data_json = this.delete_like_from_data_json;
+      content_inner_path = "data/users/" + Page.site_info.auth_address + "/content.json";
+      this_load_likes = this.load_likes;
+      return Page.cmd("wrapperConfirm", ["Unlike?", "Ok"], (function(_this) {
+        return function() {
+          return delete_like_from_data_json(file_uri, function(res) {
+            if (res === "ok") {
+              Page.cmd("sitePublish", {
+                "inner_path": content_inner_path
+              });
+              console.log("[KopyKate: Unliked]");
+              return this_load_likes();
+            }
+          });
+        };
+      })(this));
+    };
+
+    video_playing.prototype.delete_subscription = function(user_address) {
+      var content_inner_path, delete_sub_from_data_json, this_load_subs;
+      delete_sub_from_data_json = this.delete_sub_from_data_json;
+      content_inner_path = "data/users/" + Page.site_info.auth_address + "/content.json";
+      this_load_subs = this.load_subs;
+      return Page.cmd("wrapperConfirm", ["Unsubscribe?", "Ok"], (function(_this) {
+        return function() {
+          return delete_sub_from_data_json(user_address, function(res) {
+            if (res === "ok") {
+              Page.cmd("sitePublish", {
+                "inner_path": content_inner_path
+              });
+              console.log("[KopyKate: Unsubscribed]");
+              return this_load_subs();
+            }
           });
         };
       })(this));
@@ -2149,6 +2282,28 @@
               return this_load_comments();
             }
           });
+        };
+      })(this));
+    };
+
+    video_playing.prototype.register_subscription = function(file_directory, cb) {
+      var inner_path;
+      inner_path = "data/users/" + Page.site_info.auth_address + "/data.json";
+      return Page.cmd("fileGet", [inner_path, false], (function(_this) {
+        return function(res) {
+          if (res) {
+            res = JSON.parse(res);
+          }
+          if (res === null) {
+            res = {};
+          }
+          if (res.subscription === null || res.subscription === void 0) {
+            res.subscription = {};
+          }
+          if (res.subscription[file_directory] === null || res.subscription[file_directory] === void 0) {
+            res.subscription[file_directory] = 1;
+          }
+          return Page.cmd("fileWrite", [inner_path, Text.fileEncode(res)], cb);
         };
       })(this));
     };
@@ -2179,6 +2334,120 @@
             date_added: date_added
           });
           return Page.cmd("fileWrite", [inner_path, Text.fileEncode(res)], cb);
+        };
+      })(this));
+    };
+
+    video_playing.prototype.register_vote = function(file_uri, cb) {
+      var inner_path;
+      inner_path = "data/users/" + Page.site_info.auth_address + "/data.json";
+      return Page.cmd("fileGet", [inner_path, false], (function(_this) {
+        return function(res) {
+          if (res) {
+            res = JSON.parse(res);
+          }
+          if (res === null) {
+            res = {};
+          }
+          if (res.file_vote === null || res.file_vote === void 0) {
+            res.file_vote = {};
+          }
+          if (res.file_vote[file_uri] === null || res.file_vote[file_uri] === void 0) {
+            res.file_vote[file_uri] = [];
+          }
+          console.log(res.file_vote);
+          console.log(file_uri);
+          console.log(res.file_vote[file_uri]);
+          res.file_vote[file_uri] = 1;
+          return Page.cmd("fileWrite", [inner_path, Text.fileEncode(res)], cb);
+        };
+      })(this));
+    };
+
+    video_playing.prototype.register_report = function(file_uri, cb) {
+      var inner_path;
+      inner_path = "data/users/" + Page.site_info.auth_address + "/data.json";
+      return Page.cmd("fileGet", [inner_path, false], (function(_this) {
+        return function(res) {
+          if (res) {
+            res = JSON.parse(res);
+          }
+          if (res === null) {
+            res = {};
+          }
+          if (res.file_vote === null || res.file_report === void 0) {
+            res.file_report = {};
+          }
+          if (res.file_report[file_uri] === null || res.file_report[file_uri] === void 0) {
+            res.file_report[file_uri] = [];
+          }
+          res.file_report[file_uri] = 1;
+          return Page.cmd("fileWrite", [inner_path, Text.fileEncode(res)], cb);
+        };
+      })(this));
+    };
+
+    video_playing.prototype.subscribe = function(file_directory) {
+      var load_subs, register_subscription;
+      register_subscription = this.register_subscription;
+      load_subs = this.load_subs;
+      return editor.check_content_json((function(_this) {
+        return function(res) {
+          return register_subscription(file_directory, function(res) {
+            load_subs();
+            return Page.cmd("siteSign", {
+              inner_path: "data/users/" + Page.site_info.auth_address + "/content.json"
+            }, function(res) {
+              return Page.cmd("sitePublish", {
+                inner_path: "data/users/" + Page.site_info.auth_address + "/content.json",
+                "sign": false
+              });
+            });
+          });
+        };
+      })(this));
+    };
+
+    video_playing.prototype.add_vote = function(file_date_added, file_directory) {
+      var file_uri, load_likes, register_vote;
+      file_uri = file_date_added + "_" + file_directory;
+      register_vote = this.register_vote;
+      load_likes = this.load_likes;
+      return editor.check_content_json((function(_this) {
+        return function(res) {
+          return register_vote(file_uri, function(res) {
+            load_likes();
+            return Page.cmd("siteSign", {
+              inner_path: "data/users/" + Page.site_info.auth_address + "/content.json"
+            }, function(res) {
+              return Page.cmd("sitePublish", {
+                inner_path: "data/users/" + Page.site_info.auth_address + "/content.json",
+                "sign": false
+              });
+            });
+          });
+        };
+      })(this));
+    };
+
+    video_playing.prototype.add_report = function(file_date_added, file_directory) {
+      var file_uri, load_report, register_report;
+      file_uri = file_date_added + "_" + file_directory;
+      register_report = this.register_report;
+      load_report = this.load_report;
+      return editor.check_content_json((function(_this) {
+        return function(res) {
+          return register_report(file_uri, function(res) {
+            load_report();
+            return Page.cmd("siteSign", {
+              inner_path: "data/users/" + Page.site_info.auth_address + "/content.json"
+            }, function(res) {
+              return Page.cmd("sitePublish", {
+                inner_path: "data/users/" + Page.site_info.auth_address + "/content.json",
+                "sign": false
+              });
+            });
+          });
         };
       })(this));
     };
@@ -2221,12 +2490,12 @@
             limit: 1000
           };
           return Page.cmd("dbQuery", ["SELECT * FROM file LEFT JOIN json USING (json_id) " + query + " ORDER BY date_added DESC LIMIT 15"], function(res1) {
-            var full_channel_name, i, k, len, related_counter, results, row1, thumbnail, thumbnail_id, video_channel, video_channel_id, video_channel_name, video_info, video_info_id, video_link, video_link_id, video_row, video_row_id, video_string;
+            var full_channel_name, i, l, len, related_counter, results, row1, thumbnail, thumbnail_id, video_channel, video_channel_id, video_channel_name, video_info, video_info_id, video_link, video_link_id, video_row, video_row_id, video_string;
             related_counter = 0;
             $("#related_column").html("");
             $("#related_column").append("<span>Up next</span>");
             results = [];
-            for (i = k = 0, len = res1.length; k < len; i = ++k) {
+            for (i = l = 0, len = res1.length; l < len; i = ++l) {
               row1 = res1[i];
               video_string = row1.date_added + "_" + row1.directory;
               full_channel_name = row1.cert_user_id;
@@ -2279,6 +2548,206 @@
       })(this));
     };
 
+    video_playing.prototype.load_subs = function() {
+      var file_url, init_url, query, real_url, video_date_added, video_user_address;
+      init_url = Page.history_state["url"];
+      real_url = init_url.split("Video=")[1];
+      video_date_added = real_url.split("_")[0];
+      video_user_address = real_url.split("_")[1];
+      file_url = real_url;
+      query = "SELECT * FROM subscription LEFT JOIN json USING (json_id) WHERE user_address='" + video_user_address + "'";
+      return Page.cmd("dbQuery", [query], (function(_this) {
+        return function(res) {
+          var delete_subscription, i, is_subscribed, l, len, sub, sub_counter, subscribe, subscribe_button, unsubscribe_button;
+          sub_counter = 0;
+          i = 0;
+          is_subscribed = false;
+          for (i = l = 0, len = res.length; l < len; i = ++l) {
+            sub = res[i];
+            sub_counter += 1;
+            if (sub.directory === Page.site_info.auth_address) {
+              is_subscribed = true;
+            }
+          }
+          if (i === res.length) {
+            if (is_subscribed) {
+              unsubscribe_button = $("<a></a>");
+              unsubscribe_button.attr("id", "unsubscribe_now_button");
+              unsubscribe_button.attr("class", "subscribe_icon b64_green");
+              unsubscribe_button.attr("href", "javascript:void(0)");
+              $("#subscribers").html("&middot; Unsubscribe (" + sub_counter + ")");
+              $("#subscribe_button").html(unsubscribe_button);
+              delete_subscription = _this.delete_subscription;
+              return $("#unsubscribe_now_button").on("click", function() {
+                if (Page.site_info.cert_user_id) {
+                  return delete_subscription(video_user_address);
+                } else {
+                  return Page.cmd("certSelect", [["zeroid.bit"]], (function(_this) {
+                    return function(res) {
+                      return delete_subscription(video_user_address);
+                    };
+                  })(this));
+                }
+              });
+            } else {
+              subscribe_button = $("<a></a>");
+              subscribe_button.attr("id", "subscribe_now_button");
+              subscribe_button.attr("class", "subscribe_icon");
+              subscribe_button.attr("href", "javascript:void(0)");
+              $("#subscribers").html("&middot; Subscribe (" + sub_counter + ")");
+              $("#subscribe_button").html(subscribe_button);
+              subscribe = _this.subscribe;
+              return $("#subscribe_now_button").on("click", function() {
+                if (Page.site_info.cert_user_id) {
+                  return subscribe(video_user_address);
+                } else {
+                  return Page.cmd("certSelect", [["zeroid.bit"]], (function(_this) {
+                    return function(res) {
+                      return subscribe(video_user_address);
+                    };
+                  })(this));
+                }
+              });
+            }
+          }
+        };
+      })(this));
+    };
+
+    video_playing.prototype.load_report = function() {
+      var file_uri, init_url, query, real_url, video_date_added, video_user_address;
+      init_url = Page.history_state["url"];
+      real_url = init_url.split("Video=")[1];
+      video_date_added = real_url.split("_")[0];
+      video_user_address = real_url.split("_")[1];
+      file_uri = real_url;
+      query = "SELECT * FROM file_report LEFT JOIN json USING (json_id) WHERE file_uri='" + real_url + "'";
+      return Page.cmd("dbQuery", [query], (function(_this) {
+        return function(res) {
+          var add_report, delete_report, i, is_reported, l, len, report, report_button, report_counter, unreport_button;
+          report_counter = 0;
+          i = 0;
+          is_reported = false;
+          for (i = l = 0, len = res.length; l < len; i = ++l) {
+            report = res[i];
+            report_counter += 1;
+            if (report.directory === Page.site_info.auth_address) {
+              is_reported = true;
+            }
+          }
+          if (i === res.length) {
+            if (is_reported) {
+              unreport_button = $("<a></a>");
+              unreport_button.attr("id", "unreport_now_button");
+              unreport_button.attr("class", "report_icon b64_red");
+              unreport_button.attr("href", "javascript:void(0)");
+              $("#report_button").html("");
+              $("#report_button").append("<span>&middot; Unreport</span>");
+              $("#report_button").append(unreport_button);
+              delete_report = _this.delete_report;
+              return $("#unreport_now_button").on("click", function() {
+                if (Page.site_info.cert_user_id) {
+                  return delete_report(video_date_added, video_user_address);
+                } else {
+                  return Page.cmd("certSelect", [["zeroid.bit"]], (function(_this) {
+                    return function(res) {
+                      return delete_report(video_date_added, video_user_address);
+                    };
+                  })(this));
+                }
+              });
+            } else {
+              report_button = $("<a></a>");
+              report_button.attr("id", "report_now_button");
+              report_button.attr("class", "report_icon");
+              report_button.attr("href", "javascript:void(0)");
+              $("#report_button").html("");
+              $("#report_button").append("<span>&middot; Report</span>");
+              $("#report_button").append(report_button);
+              add_report = _this.add_report;
+              return $("#report_now_button").on("click", function() {
+                if (Page.site_info.cert_user_id) {
+                  return add_report(video_date_added, video_user_address);
+                } else {
+                  return Page.cmd("certSelect", [["zeroid.bit"]], (function(_this) {
+                    return function(res) {
+                      return add_report(video_date_added, video_user_address);
+                    };
+                  })(this));
+                }
+              });
+            }
+          }
+        };
+      })(this));
+    };
+
+    video_playing.prototype.load_likes = function() {
+      var file_uri, init_url, query, real_url, video_date_added, video_user_address;
+      init_url = Page.history_state["url"];
+      real_url = init_url.split("Video=")[1];
+      video_date_added = real_url.split("_")[0];
+      video_user_address = real_url.split("_")[1];
+      file_uri = real_url;
+      query = "SELECT * FROM file_vote LEFT JOIN json USING (json_id) WHERE file_uri='" + real_url + "'";
+      return Page.cmd("dbQuery", [query], (function(_this) {
+        return function(res) {
+          var add_vote, delete_like, i, is_liked, l, len, like_button, like_counter, unlike_button, vote;
+          like_counter = 0;
+          i = 0;
+          is_liked = false;
+          for (i = l = 0, len = res.length; l < len; i = ++l) {
+            vote = res[i];
+            like_counter += 1;
+            if (vote.directory === Page.site_info.auth_address) {
+              is_liked = true;
+            }
+          }
+          if (i === res.length) {
+            if (is_liked) {
+              unlike_button = $("<a></a>");
+              unlike_button.attr("id", "unlike_now_button");
+              unlike_button.attr("class", "like_icon b64_green");
+              unlike_button.attr("href", "javascript:void(0)");
+              $("#like_button").html(unlike_button);
+              $("#likes_total").text("Unlike (" + like_counter + ")");
+              delete_like = _this.delete_like;
+              return $("#unlike_now_button").on("click", function() {
+                if (Page.site_info.cert_user_id) {
+                  return delete_like(video_date_added, video_user_address);
+                } else {
+                  return Page.cmd("certSelect", [["zeroid.bit"]], (function(_this) {
+                    return function(res) {
+                      return delete_like(video_date_added, video_user_address);
+                    };
+                  })(this));
+                }
+              });
+            } else {
+              like_button = $("<a></a>");
+              like_button.attr("id", "like_now_button");
+              like_button.attr("class", "like_icon");
+              like_button.attr("href", "javascript:void(0)");
+              $("#like_button").html(like_button);
+              $("#likes_total").text("Like (" + like_counter + ")");
+              add_vote = _this.add_vote;
+              return $("#like_now_button").on("click", function() {
+                if (Page.site_info.cert_user_id) {
+                  return add_vote(video_date_added, video_user_address);
+                } else {
+                  return Page.cmd("certSelect", [["zeroid.bit"]], (function(_this) {
+                    return function(res) {
+                      return add_vote(video_date_added, video_user_address);
+                    };
+                  })(this));
+                }
+              });
+            }
+          }
+        };
+      })(this));
+    };
+
     video_playing.prototype.load_comments = function() {
       var file_uri, init_url, query, real_url, video_date_added, video_user_address;
       init_url = Page.history_state["url"];
@@ -2289,7 +2758,7 @@
       query = "SELECT * FROM comment LEFT JOIN json USING (json_id) WHERE file_uri='" + real_url + "' ORDER BY date_added DESC";
       return Page.cmd("dbQuery", [query], (function(_this) {
         return function(res) {
-          var comment, comment_body, comment_counter, comment_date, comment_date_added, comment_delete, comment_delete_id, comment_directory, comment_icon, comment_id, comment_input, comment_single, comment_single_id, comment_text, comment_this_user_id, comment_user, comment_user_id, comment_username, delete_comment, k, len, my_counter, results, write_comment;
+          var comment, comment_body, comment_counter, comment_date, comment_date_added, comment_delete, comment_delete_id, comment_directory, comment_icon, comment_id, comment_input, comment_single, comment_single_id, comment_text, comment_this_user_id, comment_user, comment_user_id, comment_username, delete_comment, l, len, my_counter, results, write_comment;
           comment_input = $("<input>");
           comment_input.attr("id", "comment_box_input");
           comment_input.attr("class", "comment_box_input");
@@ -2315,8 +2784,8 @@
             }
           });
           results = [];
-          for (k = 0, len = res.length; k < len; k++) {
-            comment = res[k];
+          for (l = 0, len = res.length; l < len; l++) {
+            comment = res[l];
             comment_body = comment.body;
             comment_body = comment.body.replace(/</g, ' < ');
             comment_body = comment.body.replace(/>/g, ' > ');
@@ -2428,7 +2897,7 @@
             filter: "",
             limit: 1000
           }, function(res2) {
-            var file_name, i, k, len, my_file, my_row, optional_name, optional_peer, optional_seed, stats_loaded, user_directory, video_actual, video_channel, video_date_added, video_description, video_title, word_array;
+            var add_report, file_name, i, l, len, my_file, my_row, optional_name, optional_peer, optional_seed, stats_loaded, user_directory, video_actual, video_channel, video_date_added, video_description, video_title, word_array;
             my_row = res1[0];
             file_name = my_row['file_name'];
             video_title = my_row['title'];
@@ -2438,7 +2907,7 @@
             user_directory = my_row['directory'];
             stats_loaded = false;
             i = 0;
-            for (i = k = 0, len = res2.length; k < len; i = ++k) {
+            for (i = l = 0, len = res2.length; l < len; i = ++l) {
               my_file = res2[i];
               optional_name = my_file['inner_path'].replace(/.*\//, "");
               optional_peer = my_file['peer'];
@@ -2446,7 +2915,7 @@
               if (optional_name === file_name) {
                 stats_loaded = true;
                 $("#player_info").append("<span class='video_player_title'>" + video_title + "</span>");
-                $("#player_info").append("<span class='video_player_stats'>" + optional_seed + " / " + optional_peer + " peers</span>");
+                $("#player_info").append("<div id='player_stats' class='video_player_stats'><span>" + optional_seed + " / " + optional_peer + " Peers &middot; </span></div>");
                 $("#player_info").append("<span class='video_player_username'>" + video_channel.charAt(0).toUpperCase() + video_channel.slice(1) + "</span>");
                 $("#player_info").append("<span class='video_player_userdate'>Published " + Time.since(video_date_added) + "</span><br>");
                 $("#player_info").append("<span class='video_player_brief'>" + video_description + "</span>");
@@ -2456,7 +2925,7 @@
             if (i === res2.length) {
               if (stats_loaded === false) {
                 $("#player_info").append("<span class='video_player_title'>" + video_title + "</span>");
-                $("#player_info").append("<span class='video_player_stats'>0 / 0 peers</span><br>");
+                $("#player_info").append("<div id='player_stats' class='video_player_stats'><span>0 / 0 Peers &middot; </span></div><br>");
                 $("#player_info").append("<span class='video_player_username'>" + video_channel.charAt(0).toUpperCase() + video_channel.slice(1) + "</span>");
                 $("#player_info").append("<span class='video_player_userdate'>Published " + Time.since(video_date_added) + "</span><br>");
                 $("#player_info").append("<span class='video_player_brief'>" + video_description + "</span>");
@@ -2466,7 +2935,27 @@
             video_actual = "data/users/" + user_directory + "/" + file_name;
             _this.render_video(video_actual);
             word_array = video_title.split(" ");
-            return _this.load_related(word_array[0]);
+            _this.load_related(word_array[0]);
+            $("#player_stats").append("<span id='likes_total'></span>");
+            $("#player_stats").append("<span id='like_button'></span>");
+            $("#player_stats").append("<span id='subscribers'></span>");
+            $("#player_stats").append("<span id='subscribe_button'></span>");
+            $("#player_stats").append("<span id='report_button'></span>");
+            _this.load_likes();
+            _this.load_subs();
+            _this.load_report();
+            add_report = _this.add_report;
+            return $("#report_button").on("click", function() {
+              if (Page.site_info.cert_user_id) {
+                return add_report(date_added, user_address);
+              } else {
+                return Page.cmd("certSelect", [["zeroid.bit"]], (function(_this) {
+                  return function(res) {
+                    return add_report(date_added, user_address);
+                  };
+                })(this));
+              }
+            });
           });
         };
       })(this));
@@ -2579,6 +3068,10 @@
           this.route(url, "channel");
           this.state = {};
           this.state.page = "channel";
+        } else if (base.href.indexOf("Subbed") > -1) {
+          this.route(url, "subbed");
+          this.state = {};
+          this.state.page = "subbed";
         } else if (base.href.indexOf("Home") > -1) {
           this.route("", "home");
           this.state = {};
@@ -2642,6 +3135,11 @@
         video_lister.max_videos = 15;
         video_lister.counter = 1;
         return video_lister.render();
+      } else if (mode === "subbed") {
+        video_lister.order_by = "subbed";
+        video_lister.max_videos = 15;
+        video_lister.counter = 1;
+        return video_lister.render();
       } else if (mode === "channel") {
         video_lister.order_by = "channel";
         video_lister.max_videos = 15;
@@ -2685,6 +3183,8 @@
         return this.project_this("latest");
       } else if (query.indexOf("Channel") > -1) {
         return this.project_this("channel");
+      } else if (query.indexOf("Subbed") > -1) {
+        return this.project_this("subbed");
       } else {
         return this.project_this("home");
       }

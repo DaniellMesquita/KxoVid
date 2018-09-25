@@ -1,0 +1,271 @@
+{
+ "address": "1NETVUYqgQQsVsnj3ru7Aed2qacv4Dg6wC",
+ "background-color": "#F5F5F5",
+ "description": "Fork of KopyKate with videos stored in category hubs.",
+ "domain": "netvision.bit",
+ "favicon": "icon.png",
+ "files": {
+  ".git/HEAD": {
+   "sha512": "76b199f1bffdc6d21547895431b0f85f3857df400225cbd1ae55e7ded09786a8",
+   "size": 23
+  },
+  ".git/config": {
+   "sha512": "d75b9e5238893a86c15171ba2c14f05d4fa1602bcc0d357fc65570a1838b51b2",
+   "size": 311
+  },
+  ".git/description": {
+   "sha512": "f7e152f75b124c3e1c5d12f00427729d9eec4e2c1bf70d7606440a6600d00336",
+   "size": 73
+  },
+  ".git/hooks/applypatch-msg.sample": {
+   "sha512": "536cce804d84e25813993efdd240537b52d00ce9cdcecf1982f85096d56a5212",
+   "size": 478
+  },
+  ".git/hooks/commit-msg.sample": {
+   "sha512": "d6bb7fa747f4625adf1877f546565cbe812ca7dd4168f7e9068e6732555d8737",
+   "size": 896
+  },
+  ".git/hooks/fsmonitor-watchman.sample": {
+   "sha512": "4f611b6fc08db7552a0eaca432c41d1114cd4daa066d9fc722f34f6de05ec3ee",
+   "size": 3327
+  },
+  ".git/hooks/post-update.sample": {
+   "sha512": "473ad124642571656276bf83b9ff63ab1804d3c23a5bdae52391c6f70a894849",
+   "size": 189
+  },
+  ".git/hooks/pre-applypatch.sample": {
+   "sha512": "cb78aa7e9b9c146e5db65d86dd83f04e2b6942a06fab50c704a0fd900683f3b6",
+   "size": 424
+  },
+  ".git/hooks/pre-commit.sample": {
+   "sha512": "4a7ac2ed2ffe50d2a997c3477b5855c3d19423c295a82f7d660be3418217a183",
+   "size": 1642
+  },
+  ".git/hooks/pre-push.sample": {
+   "sha512": "37cd20a090494acb16c2255fe93dadeb409f2553afddc409dad5b5e99c9f5612",
+   "size": 1348
+  },
+  ".git/hooks/pre-rebase.sample": {
+   "sha512": "00d21d5d72386c3d9b5a1c36ba85201f730556a8295d4353af54af7892ab8101",
+   "size": 4898
+  },
+  ".git/hooks/pre-receive.sample": {
+   "sha512": "ee08c11fab7e896b2e09c241954ba7640338b12c75cd8040daf053c31b2f2223",
+   "size": 544
+  },
+  ".git/hooks/prepare-commit-msg.sample": {
+   "sha512": "50ec8a0dd98427e80a82a8d8ce44462a845876e1594c9d0e89483ce9a8aaad61",
+   "size": 1492
+  },
+  ".git/hooks/update.sample": {
+   "sha512": "759abd33e5d1dda9b3e3d3116c47b23f616320d70cd66d567b1c4eeefeb6d785",
+   "size": 3610
+  },
+  ".git/index": {
+   "sha512": "ba888907141dc07eb84b9efabde946c4581578f7da706ce27172ecfa84d5e30d",
+   "size": 4396
+  },
+  ".git/info/exclude": {
+   "sha512": "9828c6ecdf91bf117416e17f4ee9caee2e1e37b6fb00b9ff04035ace17a3089b",
+   "size": 240
+  },
+  ".git/logs/HEAD": {
+   "sha512": "0a77f7d0eaf5f3a0248c2cbce4eef7c57edd14d1ecec8db2ab8294ec93893397",
+   "size": 200
+  },
+  ".git/logs/refs/heads/master": {
+   "sha512": "0a77f7d0eaf5f3a0248c2cbce4eef7c57edd14d1ecec8db2ab8294ec93893397",
+   "size": 200
+  },
+  ".git/logs/refs/remotes/origin/HEAD": {
+   "sha512": "0a77f7d0eaf5f3a0248c2cbce4eef7c57edd14d1ecec8db2ab8294ec93893397",
+   "size": 200
+  },
+  ".git/objects/pack/pack-eb2d22b4c7db9c4126d838ba30dd3a749bea2a91.idx": {
+   "sha512": "57a51659c746699e62e3786d1098cb9632757a74cf1d53b1bd5b77e016c7f8e8",
+   "size": 9388
+  },
+  ".git/objects/pack/pack-eb2d22b4c7db9c4126d838ba30dd3a749bea2a91.pack": {
+   "sha512": "356dabd0e9eb07f9d9ea6ad29e3b892858580e2f26e6dd4ae94c0af736e74909",
+   "size": 483721
+  },
+  ".git/packed-refs": {
+   "sha512": "0c6f743f75d4c7fe61bc6bc402fca6e61cd32e5d6d81e1f0e900059236e81dbf",
+   "size": 114
+  },
+  ".git/refs/heads/master": {
+   "sha512": "57e098abc10d5b892dddff78006ef9e53c612c3ff1fd3d93d8e89a22a875d242",
+   "size": 41
+  },
+  ".git/refs/remotes/origin/HEAD": {
+   "sha512": "0d686b330d5704fdbb9588d62bbddda273f86b24db52ddbdb73c0c304aabb8e6",
+   "size": 32
+  },
+  ".git/tortoisegit.data": {
+   "sha512": "1fbe3b01a074be902d56ad18cd5f652ee9c1762c54b2bfa355d4216bbef71884",
+   "size": 9076
+  },
+  ".git/tortoisegit.index": {
+   "sha512": "4e2f40e5ffbbeb6565ed3decff239e4d3c3d6343b380a8f3d46f4c93756c83a6",
+   "size": 1888
+  },
+  "Presentation.pptx": {
+   "sha512": "c3b76bbb7cb24aab11ab793dc9c958619c14287e4ec88e3ee2b73fdaf49dbda5",
+   "size": 110742
+  },
+  "README.md": {
+   "sha512": "69e034563f8673910aedc049b2b1104ab2bf48571e227dd027c60ae55c75a69b",
+   "size": 126
+  },
+  "css/all.css": {
+   "sha512": "6ba5c2bd0b88f8b492c7675575d22e298cc4c60f849168e2ab9859f1d1a7acb5",
+   "size": 58833
+  },
+  "css/fonts.css": {
+   "sha512": "4149be45d8a05f04c493d0f640a1648ac24fd332dc16c43116c195a2a06f36f6",
+   "size": 137910
+  },
+  "css/new.css": {
+   "sha512": "1337d77ccd68a30a29b7ae14fd6d07a5251d4a8c60f89f8e2fb38f9ec6f1a65c",
+   "size": 26625
+  },
+  "css/placeholder": {
+   "sha512": "1b302a2f1e624a5fb5ad94ddc4e5f8bfd74d26fa37512d0e5face303d8c40eee",
+   "size": 2
+  },
+  "dbschema.json": {
+   "sha512": "df1720645c24e48ae5f73c3cc6b964169992d8b1d67bb1ebf859fa0329bf840e",
+   "size": 3499
+  },
+  "icon.png": {
+   "sha512": "9cdfd949b0c72fe1d57f89d977f6e5ac8f4e840297336ab568aeac68b297852f",
+   "size": 41657
+  },
+  "img/CAT.svg": {
+   "sha512": "864fcdd20864041a4d8bf182c25665d3bffbc9424bfb00a2329614f2d13725b1",
+   "size": 1108
+  },
+  "img/clock.svg": {
+   "sha512": "ceadfaaedbcc54a3c75a652ba47cf4e47dc4eb3ca66ff3a989c4f4901744fe1a",
+   "size": 697
+  },
+  "img/code.svg": {
+   "sha512": "be42694257b358455b0ace486030ad5d3cb811b57b3a080f6c22b8fa944d0be7",
+   "size": 1586
+  },
+  "img/home.svg": {
+   "sha512": "3e8abd96f92a7d8e0852c30356ef1229646417d5964b1685cd38ef020daa9493",
+   "size": 1079
+  },
+  "img/icon-video-play.svg": {
+   "sha512": "9415f19df90a2b671a3ad68fbbfa9d5e72a2d5deb31b224d5ea8d604874bca3b",
+   "size": 958
+  },
+  "img/logo-mobile.png": {
+   "sha512": "dfec77c77c13100841b4513e5b3e6bc1f68c579921c53e5a744fe1f6ed61c552",
+   "size": 38067
+  },
+  "img/logo-svg.svg": {
+   "sha512": "cb78d70ac916c6fe64b64005d9064fcbea1d457aed7c513b02656edaac977c36",
+   "size": 2772
+  },
+  "img/logotype.png": {
+   "sha512": "4bc6b1a4f9f8c994f2b712b733a35f938628124c7785346581aa4a946b80e8e7",
+   "size": 63652
+  },
+  "img/media.svg": {
+   "sha512": "30c5b8cdee1aa9291aaf90a2a021ad3240f17cfde9d04c48121b76de95e58a80",
+   "size": 2145
+  },
+  "img/menu.png": {
+   "sha512": "f1a9ec18b271474e93adee6866c764b77cea0c336e80ded14d07a77f2a4d766d",
+   "size": 688
+  },
+  "img/menu.svg": {
+   "sha512": "8aa162a6499bb91ab4e157a9e9f57f77028d69fbaac5f8d0c03e052c51dbcc24",
+   "size": 778
+  },
+  "img/peer.svg": {
+   "sha512": "0dcb1812058e04a7a9ebede83e59bab5e83e18564ddc23d1783df2505d891efa",
+   "size": 2652
+  },
+  "img/placeholder": {
+   "sha512": "1b302a2f1e624a5fb5ad94ddc4e5f8bfd74d26fa37512d0e5face303d8c40eee",
+   "size": 2
+  },
+  "img/search.png": {
+   "sha512": "946b64935fdf74b579c5f34b1436999bbb51ee04a4236b91705b8ac556cb6708",
+   "size": 17370
+  },
+  "img/search.svg": {
+   "sha512": "08705725c074caeed1b12344459e99677aa9882f64e6039f6b9a203fd7ebffb3",
+   "size": 929
+  },
+  "img/upload-arrow-with-bar.svg": {
+   "sha512": "2d1d61406933879576da9253149fd3826db75b7186120fc2d123d9fb4a0f3701",
+   "size": 709
+  },
+  "img/upload.jpg": {
+   "sha512": "2339e69183fbb7f15eda655e7a4a6e14d5832940807a0e0c090b61ae927a8f68",
+   "size": 18983
+  },
+  "img/upload.png": {
+   "sha512": "9554071e578b678e04e7e62e7bf4ae916983a03949795af9255fbacb226987cd",
+   "size": 19643
+  },
+  "img/user.png": {
+   "sha512": "f03e4a37c9834ba207fadcdc26b43082126a693e37db574cbc1c6b49d77f073f",
+   "size": 17673
+  },
+  "img/user.svg": {
+   "sha512": "0f9d5ceb94f615f47c2103784d8d2066e9d5e16b04983dfe51a055c92d0e6c81",
+   "size": 1283
+  },
+  "img/user_comment.png": {
+   "sha512": "998a8f51a58ed0162c73171608b2a7626d4e047e5ec23b3f9632fd4ec0232e42",
+   "size": 20272
+  },
+  "img/video.svg": {
+   "sha512": "b459e325b39b31d7ce792546575b7e6803aaf86ae05e2b3d52354871ebf3c473",
+   "size": 1761
+  },
+  "img/video_empty.png": {
+   "sha512": "7826f63ba7d1ac64388e6b0dd9b5fdb16a0f7f9a975729a3b986cac8836ab73c",
+   "size": 23804
+  },
+  "index.html": {
+   "sha512": "2465eedcb0c4fa82fd9de172a5a51d5a3744a68755d2ce0ab45031792e23b46a",
+   "size": 1494
+  },
+  "js/all.js": {
+   "sha512": "545d6918dc9f19e9ec2084183193c87ec43cc6ed1b2f4642e2517611ae0479e2",
+   "size": 132209
+  },
+  "js/base64.js": {
+   "sha512": "f7ffa0bec423e9f643db773224600cd7d426b7a4455f2571128a5c6ff58c01c5",
+   "size": 16745
+  },
+  "js/jquery-3.2.1.min.js": {
+   "sha512": "dcff2b5c2b8625d3593a7531ff4ddcd633939cc9f7acfeb79c18a9e6038fdaa9",
+   "size": 86659
+  }
+ },
+ "ignore": "(data/users/.*db|data/users/.*/.*|.*.py)",
+ "inner_path": "content.json",
+ "modified": 1537888202,
+ "postmessage_nonce_security": true,
+ "settings": {
+  "admin": "daniell",
+  "admin_href": "http://127.0.0.1:43110/Mail.ZeroNetwork.bit/?to=daniell",
+  "topic_sticky_uris": ["1512961049_17ffrcHNzbFoUe81PyMEagQdv2DGNRLFcE"]
+ },
+ "signers_sign": "HK3WO8I70KDA/UT++Yb+A+0wR7BeFb97khvUFlW8ejHOCrZ1FyT4UYPMFJCeVL/AzncZtQ9WRK0gwg4RscZJu9s=",
+ "signs": {
+  "1NETVUYqgQQsVsnj3ru7Aed2qacv4Dg6wC": "G8TbWni3JIerZN8P/nmJKgumE/yT5Uyh08JItUuzZfDmT8zkX+3/tYelNHmXXbMuWahGSbfRhB/1nzCChjictq4="
+ },
+ "signs_required": 1,
+ "title": "NetVision",
+ "translate": ["js/all.js"],
+ "viewport": "width=device-width, initial-scale=0.8",
+ "zeronet_version": "0.6.3"
+}
