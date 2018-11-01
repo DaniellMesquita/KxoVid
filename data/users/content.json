@@ -1,40 +1,44 @@
 {
- "address": "1NETVUYqgQQsVsnj3ru7Aed2qacv4Dg6wC",
+ "address": "14c5LUN73J7KKMznp9LvZWkxpZFWgE1sDz",
  "files": {},
  "ignore": ".*",
  "inner_path": "data/users/content.json",
- "modified": 1528492176,
+ "modified": 1538165792,
  "signs": {
-  "18Pfr2oswXvD352BbJvo59gZ3GbdbipSzh": "HGw6ZbXkMYKq9jpIFdUTejujy8W9CS3UTi+JlDZ+xRQVJ4J/y7PS3831owqYucJN5Q8ueZp36PlCvrDC0CASNH8="
+  "14c5LUN73J7KKMznp9LvZWkxpZFWgE1sDz": "GyhuQlIUgfdoxoH4OWVftyese16YCpkhke5GzhuIzBGXRxJMB+iNtfgdEReCIkPaSrHXWCDaLvcnxlKBvJvx9lU="
  },
  "user_contents": {
   "cert_signers": {
-   "zeroid.bit": ["1iD5ZQJMNXu43w1qLB8sfdHVKppVMduGz"],
    "kxoid.bit": ["12F5SvxoPR128aiudte78h8pY7mobroG6V"]
   },
   "permission_rules": {
-   ".*": {
+   ".*@cryptoid.bit": {
     "files_allowed": "data.json",
-    "max_size": 2000000,
-    "max_size_optional": 100000000000
+    "files_allowed_optional": ".+\\.(zip)(.piecemap.msgpack)?",
+    "max_size": 300000
    },
-   "bitid/.*@zeroid.bit": {"max_size": 400000},
-   "bitmsg/.*@zeroid.bit": {"max_size": 150000}
+   ".*@kaffie.bit": {
+    "files_allowed": "data.json",
+    "files_allowed_optional": ".+\\.(zip)(.piecemap.msgpack)?",
+    "max_size": 300000
+   },
+   ".*@kxoid.bit": {
+    "files_allowed": "data.json",
+    "files_allowed_optional": ".+\\.(zip)(.piecemap.msgpack)?",
+    "max_size": 1000000
+   },
+   ".*@peak.id": {
+    "files_allowed": "data.json",
+    "files_allowed_optional": ".+\\.(zip)(.piecemap.msgpack)?",
+    "max_size": 600000
+   },
+   ".*@zeroid.bit": {
+    "files_allowed": "data.json",
+    "files_allowed_optional": ".+\\.(zip)(.piecemap.msgpack)?",
+    "max_size": 600000
+   },
+   "bitmsg/.*@zeroid.bit": {"max_size": 800000}
   },
-  "permissions": {
-   "bad@zeroid.bit": false,
-   "kai0@zeroid.bit": {
-    "max_size": 2000000,
-    "max_size_optional": 500000000000
-   },
-   "daniell@zeroid.bit": {
-    "max_size": 2000000,
-    "max_size_optional": 500000000000
-   },
-   "sylvaine@zeroid.bit": {
-    "max_size": 2000000,
-    "max_size_optional": 400000000000
-   }
-  }
+  "permissions": {"bad@zeroid.bit": false}
  }
 }
